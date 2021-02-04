@@ -1,0 +1,123 @@
+
+import java.util.Scanner;
+import java.lang.*;
+import java.io.*;
+ class Test{
+	public static void main (String[] args) 
+	{
+ 
+ 
+        Circle cir = new Circle();
+        System.out.println("Please enter the Radius for the circle");
+        Scanner sc1 = new Scanner(System.in);
+        double r1 = sc1.nextDouble();
+        cir.setR(r1);
+        double areaOfCircle = cir.area();
+        System.out.println("The area of the circle is "
+                + areaOfCircle);
+ 
+        Cylinder cyl = new Cylinder();
+        System.out.println("Please enter the Radius for the cylinder");
+        Scanner sc2 = new Scanner(System.in);
+        double r2 = sc2.nextDouble();
+        cyl.setR(r2);
+ 
+        System.out.println("Please enter the Height of the cylinder");
+        Scanner sc3 = new Scanner(System.in);
+        double r3 = sc3.nextDouble();
+        cyl.setH(r3);
+ 
+        double areaOfCylinder = cyl.cylArea();
+        System.out.println("The area of the cylinder is "
+                + areaOfCylinder);
+        double volumeOfCylinder = cyl.volume();
+        System.out.println("The Volume of the cylinder is "
+                + volumeOfCylinder);
+ 
+ 
+ 
+	}
+}
+ class Circle {
+    private double r;
+    final double pi = 3.14;
+ 
+    public double getR() {
+        return r;
+    }
+ 
+    public void setR(double r) {
+        this.r = r;
+    }
+    public double area() {
+        double r= getR();
+        double areaCalc = pi * Math.pow(r, 2);
+ 
+        return areaCalc;
+ 
+ 
+ 
+    }
+ 
+}
+ class Cylinder extends Circle {
+    private double h;
+ 
+    public double getH() {
+        return h;
+    }
+ 
+    public void setH(double h) {
+        this.h = h;
+    }
+ 
+ 
+     public double cylArea() {
+        double r = getR();
+        double h = getH();
+        double areaCalc = (2 *area()) + (pi * 2 * r * h);
+        return areaCalc;
+ 
+    }
+ 
+    public double volume() {
+        double r = getR();
+        double h = getH();
+        double volCalc = h * area();
+        return volCalc;
+ 
+    }
+ 
+ 
+ 
+}
+
+
+
+
+
+
+
+2
+import java.util.Scanner;
+ 
+ 
+ class MyArray {
+ 
+    public static void main(String[] args) {
+        int arr[] = {3, 5, 8, 9, 55, 10, 1, 6};
+        System.out.println(" Please enter the index ");
+        try {
+            Scanner sc = new Scanner(System.in);
+ 
+            int theIndexFromUser = sc.nextInt();
+            System.out.println(arr[theIndexFromUser]);
+        }
+        catch(IndexOutOfBoundsException e)
+        {
+            System.out.println("Please Enter the index from 0 to 7");
+        }
+ 
+    }
+ 
+}
