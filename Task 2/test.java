@@ -27,6 +27,6 @@ public class TryCatch {
         catch(Exception e){
             System.out.println("index larger than size of array");
         }//end catch
-    }//end main
+    }//.end main
     
 }//end TryCatch
