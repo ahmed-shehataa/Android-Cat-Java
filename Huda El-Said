@@ -1,0 +1,19 @@
+  import java.util.Scanner;
+  import java.util.Arrays;
+ 
+  class Task {
+ 
+	public static void main(String[] args) {
+ 
+	Scanner input = new Scanner (System.in);
+	int Arr[] = {5, 6, 4, 48, 26};
+	System.out.println("Enter the index of the element you want ");
+	try {
+		int i = input.nextInt();
+		System.out.println("The element you want is : " + Arr[i]);
+	}
+	catch(ArrayIndexOutOfBoundsException e) {
+	    System.out.println("Error! Out of Array index");	
+	}
+	}
+  }
