@@ -1,0 +1,137 @@
+// السؤال الاول
+Access Modifiers :
+Access modifiers specifies the scope of field, method or constructor and there is a number of access modifiers in java 
+1)	 Default :
+This type of access modifiers has no key word and variable or method that has this type of access modifiers can be accessed in any other class in the same package.
+
+2)	 Private :
+This type of access modifiers has the key word (private) and variable, method and constructors that has this access modifier can only be accessed in the declared class or can be accessed outside the class if there is a public getter present in the class. 
+
+3)	 Public :
+ This type of access modifiers has the key word (public) and variables, class, method, constructor, etc. that has this access modifier can be accessed from any class   
+         
+4)	 Protected : 
+This type of access modifiers has the key word (protected) and variables, method, constructor can be accessed in other package but only in a subclass, or in any class but in the same package that class in
+
+
+// السؤال الثاني
+
+package task;
+public class Cylinder 
+    {
+	    private float radius;
+	    
+	    public float getRadius()
+	    {
+	    	return radius;
+	    }
+	    
+	    public void SetRadius(float newradius)
+	    {
+	    	this.radius = newradius;
+	    }
+	    
+        
+	    private double height;
+	    
+	    public double getHeight()
+	    {
+	    	return height;
+	    }
+	    
+	    public void SetHeight(float newheight)
+	    {
+	    	this.height = newheight;
+	    }
+	
+	
+	public double volumeOfCylinder(double circle_area)
+	{		
+		double volume = circle_area * height;
+		return volume;
+	}
+	
+	public double Get_area()
+	{
+		double pi = 3.14;
+		return (2 * pi * radius * height) ;
+	}	
+}
+
+package task;
+
+public class Circle_calc extends Cylinder {
+	
+	    private float radius;
+	    
+	    public float Radius()
+	    {
+	    	return radius;
+	    }
+	    
+	    public void SetRadius(float newradius)
+	    {
+	    	this.radius = newradius;
+	    }
+	    @Override
+		public double Get_area()
+		{
+			double pi = 3.14;
+			return (pi * radius * radius) ;
+		}	
+	
+
+}
+
+
+package task;
+import java.util.Scanner;
+
+public class Task2 
+{
+    public static void main(String[] args) 
+    
+    {
+		System.out.println("Enter the radius of circle: ");
+		Scanner input1 = new Scanner(System.in);
+		float radius = input1.nextFloat();
+		
+		System.out.println("Enter the height of cylinder: ");
+		Scanner input2 = new Scanner(System.in);
+		float height = input2.nextFloat();
+		
+		Circle_calc circle1 = new Circle_calc ();
+		circle1.SetRadius(radius);
+		double circle1area = circle1.Get_area();
+		System.out.println("Circle Area: " + circle1area);
+        Cylinder cylinder1 = new Cylinder();
+        cylinder1.SetRadius(radius);
+        cylinder1.SetHeight(height);
+        System.out.println("Cylinder volume: " + cylinder1.volumeOfCylinder(circle1area));
+        System.out.println("Cylinder Area: " + cylinder1.Get_area());
+        
+        
+	}
+}
+
+// السؤال الثالث
+
+package task;
+import java.util.Scanner;
+import java.io.*;
+public class Outofsize {
+
+	public static void main(String[] args) {
+		int [] list = {1,3,5,4};
+		try
+		{
+			System.out.println("Enter the number of index");
+			Scanner input = new Scanner(System.in);
+			int index = input.nextInt();
+			System.out.println("the value of index "+index+" : "+list[index]);
+		}
+        catch(ArrayIndexOutOfBoundsException ex)
+		{
+        	System.out.println(ex.getMessage());
+		}
+	}
